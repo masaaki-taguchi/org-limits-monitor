@@ -1,0 +1,11 @@
+# Salesforce connection information
+loginUrl: "https://login.salesforce.com"
+apiVersion : "56.0"
+userName: "(LOGIN USER NAME)"
+password: "(LOGIN PASSWORD)"
+# Default font size (0:small 1:middle: 2:large)
+fontSize: 1
+# Auto refresh interval(specified in seconds)
+autoRefreshInterval: 10
+# Web server listen port
+listenPort: 3000
