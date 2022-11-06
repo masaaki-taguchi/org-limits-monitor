@@ -6,7 +6,7 @@
   <img src="https://img.shields.io/badge/license-MIT-blue.svg">
 </p>
 
-Monitor salesforce organization's limits on a web browser
+Salesforce organization's limits monitor on a web browser
 [<img src="./images/sample.png" width="600">](./images/sample.png)
 
 ## Installation
