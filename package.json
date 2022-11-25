@@ -1,7 +1,7 @@
 {
   "name": "org-limits-monitor",
-  "version": "1.0.0",
-  "description": "Monitor salesforce organization's limits on a web browser",
+  "version": "1.0.1",
+  "description": "Salesforce organization's limits monitor on a web browser",
   "main": "org-limits-monitor.js",
   "scripts": {
     "start": "node org-limits-monitor.js",

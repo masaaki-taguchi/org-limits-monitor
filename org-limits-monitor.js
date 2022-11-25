@@ -9,57 +9,59 @@ const COMMAND_OPTION_SILENT_MODE = '-s';
 const COMMAND_OPTION_HELP = '-h';
 const COMMAND_OPTION_CONFIG = '-c';
 
+const LIMIT_ITEM_SUFFIX_REMAINING = 'Remaining';
+const LIMIT_ITEM_SUFFIX_MAX = 'Max';
 const LIMIT_ITEM_ARRAY = [
-  'ActiveScratchOrgs.Remaining', 'ActiveScratchOrgs.Max',
-  'AnalyticsExternalDataSizeMB.Remaining', 'AnalyticsExternalDataSizeMB.Max',
-  'ConcurrentAsyncGetReportInstances.Remaining', 'ConcurrentAsyncGetReportInstances.Max',
-  'ConcurrentEinsteinDataInsightsStoryCreation.Remaining', 'ConcurrentEinsteinDataInsightsStoryCreation.Max',
-  'ConcurrentEinsteinDiscoveryStoryCreation.Remaining', 'ConcurrentEinsteinDiscoveryStoryCreation.Max',
-  'ConcurrentSyncReportRuns.Remaining', 'ConcurrentSyncReportRuns.Max',
-  'DailyAnalyticsDataflowJobExecutions.Remaining', 'DailyAnalyticsDataflowJobExecutions.Max',
-  'DailyAnalyticsUploadedFilesSizeMB.Remaining', 'DailyAnalyticsUploadedFilesSizeMB.Max',
-  'DailyApiRequests.Remaining', 'DailyApiRequests.Max',
-  'DailyAsyncApexExecutions.Remaining', 'DailyAsyncApexExecutions.Max',
-  'DailyAsyncApexTests.Remaining', 'DailyAsyncApexTests.Max',
-  'DailyBulkApiBatches.Remaining', 'DailyBulkApiBatches.Max',
-  'DailyBulkV2QueryFileStorageMB.Remaining', 'DailyBulkV2QueryFileStorageMB.Max',
-  'DailyBulkV2QueryJobs.Remaining', 'DailyBulkV2QueryJobs.Max',
-  'DailyDeliveredPlatformEvents.Remaining', 'DailyDeliveredPlatformEvents.Max',
-  'DailyDurableGenericStreamingApiEvents.Remaining', 'DailyDurableGenericStreamingApiEvents.Max',
-  'DailyDurableStreamingApiEvents.Remaining', 'DailyDurableStreamingApiEvents.Max',
-  'DailyEinsteinDataInsightsStoryCreation.Remaining', 'DailyEinsteinDataInsightsStoryCreation.Max',
-  'DailyEinsteinDiscoveryPredictAPICalls.Remaining', 'DailyEinsteinDiscoveryPredictAPICalls.Max',
-  'DailyEinsteinDiscoveryPredictionsByCDC.Remaining', 'DailyEinsteinDiscoveryPredictionsByCDC.Max',
-  'DailyEinsteinDiscoveryStoryCreation.Remaining', 'DailyEinsteinDiscoveryStoryCreation.Max',
-  'DailyGenericStreamingApiEvents.Remaining', 'DailyGenericStreamingApiEvents.Max',
-  'DailyScratchOrgs.Remaining', 'DailyScratchOrgs.Max',
-  'DailyStandardVolumePlatformEvents.Remaining', 'DailyStandardVolumePlatformEvents.Max',
-  'DailyStreamingApiEvents.Remaining', 'DailyStreamingApiEvents.Max',
-  'DailyWorkflowEmails.Remaining', 'DailyWorkflowEmails.Max',
-  'DataStorageMB.Remaining', 'DataStorageMB.Max',
-  'DurableStreamingApiConcurrentClients.Remaining', 'DurableStreamingApiConcurrentClients.Max',
-  'FileStorageMB.Remaining', 'FileStorageMB.Max',
-  'HourlyAsyncReportRuns.Remaining', 'HourlyAsyncReportRuns.Max',
-  'HourlyDashboardRefreshes.Remaining', 'HourlyDashboardRefreshes.Max',
-  'HourlyDashboardResults.Remaining', 'HourlyDashboardResults.Max',
-  'HourlyDashboardStatuses.Remaining', 'HourlyDashboardStatuses.Max',
-  'HourlyLongTermIdMapping.Remaining', 'HourlyLongTermIdMapping.Max',
-  'HourlyManagedContentPublicRequests.Remaining', 'HourlyManagedContentPublicRequests.Max',
-  'HourlyODataCallout.Remaining', 'HourlyODataCallout.Max',
-  'HourlyPublishedPlatformEvents.Remaining', 'HourlyPublishedPlatformEvents.Max',
-  'HourlyPublishedStandardVolumePlatformEvents.Remaining', 'HourlyPublishedStandardVolumePlatformEvents.Max',
-  'HourlyShortTermIdMapping.Remaining', 'HourlyShortTermIdMapping.Max',
-  'HourlySyncReportRuns.Remaining', 'HourlySyncReportRuns.Max',
-  'HourlyTimeBasedWorkflow.Remaining', 'HourlyTimeBasedWorkflow.Max',
-  'MassEmail.Remaining', 'MassEmail.Max',
-  'MonthlyEinsteinDiscoveryStoryCreation.Remaining', 'MonthlyEinsteinDiscoveryStoryCreation.Max',
-  'MonthlyPlatformEventsUsageEntitlement.Remaining', 'MonthlyPlatformEventsUsageEntitlement.Max',
-  'Package2VersionCreates.Remaining', 'Package2VersionCreates.Max',
-  'Package2VersionCreatesWithoutValidation.Remaining', 'Package2VersionCreatesWithoutValidation.Max',
-  'PermissionSets.Remaining', 'PermissionSets.Max',
-  'PrivateConnectOutboundCalloutHourlyLimitMB.Remaining', 'PrivateConnectOutboundCalloutHourlyLimitMB.Max',
-  'SingleEmail.Remaining', 'SingleEmail.Max',
-  'StreamingApiConcurrentClients.Remaining', 'StreamingApiConcurrentClients.Max'
+  'ActiveScratchOrgs',
+  'AnalyticsExternalDataSizeMB',
+  'ConcurrentAsyncGetReportInstances',
+  'ConcurrentEinsteinDataInsightsStoryCreation',
+  'ConcurrentEinsteinDiscoveryStoryCreation',
+  'ConcurrentSyncReportRuns',
+  'DailyAnalyticsDataflowJobExecutions',
+  'DailyAnalyticsUploadedFilesSizeMB',
+  'DailyApiRequests',
+  'DailyAsyncApexExecutions',
+  'DailyAsyncApexTests',
+  'DailyBulkApiBatches',
+  'DailyBulkV2QueryFileStorageMB',
+  'DailyBulkV2QueryJobs',
+  'DailyDeliveredPlatformEvents',
+  'DailyDurableGenericStreamingApiEvents',
+  'DailyDurableStreamingApiEvents',
+  'DailyEinsteinDataInsightsStoryCreation',
+  'DailyEinsteinDiscoveryPredictAPICalls',
+  'DailyEinsteinDiscoveryPredictionsByCDC',
+  'DailyEinsteinDiscoveryStoryCreation',
+  'DailyGenericStreamingApiEvents',
+  'DailyScratchOrgs',
+  'DailyStandardVolumePlatformEvents',
+  'DailyStreamingApiEvents',
+  'DailyWorkflowEmails',
+  'DataStorageMB',
+  'DurableStreamingApiConcurrentClients',
+  'FileStorageMB',
+  'HourlyAsyncReportRuns',
+  'HourlyDashboardRefreshes',
+  'HourlyDashboardResults',
+  'HourlyDashboardStatuses',
+  'HourlyLongTermIdMapping',
+  'HourlyManagedContentPublicRequests',
+  'HourlyODataCallout',
+  'HourlyPublishedPlatformEvents',
+  'HourlyPublishedStandardVolumePlatformEvents',
+  'HourlyShortTermIdMapping',
+  'HourlySyncReportRuns',
+  'HourlyTimeBasedWorkflow',
+  'MassEmail',
+  'MonthlyEinsteinDiscoveryStoryCreation',
+  'MonthlyPlatformEventsUsageEntitlement',
+  'Package2VersionCreates',
+  'Package2VersionCreatesWithoutValidation',
+  'PermissionSets',
+  'PrivateConnectOutboundCalloutHourlyLimitMB',
+  'SingleEmail',
+  'StreamingApiConcurrentClients'
 ];
 const ITEM_ARRAY_STRING = 'itemArrayString';
 const ITEM_REFRESH_DISABLED = 'RefreshDisabled';
@@ -89,7 +91,10 @@ let scrollX = 0;
 let scrollY = 0;
 let fontSize = FONT_LARGE;
 let limitItemSet = new Set();
-LIMIT_ITEM_ARRAY.forEach((val) => {limitItemSet.add(val)});
+LIMIT_ITEM_ARRAY.forEach((val) => {
+  limitItemSet.add(val + '.' + LIMIT_ITEM_SUFFIX_REMAINING);
+  limitItemSet.add(val + '.' + LIMIT_ITEM_SUFFIX_MAX);
+});
 
 // analyzes command line options
 let paramList = [];
@@ -193,20 +198,21 @@ async function getItems() {
 
   let itemArrayString = '';
   LIMIT_ITEM_ARRAY.forEach((val) => {
-    let valArray = val.split('.');
-    let key = valArray[0] + valArray[1];
-    let limitVal = '';
-    if (limitObj[valArray[0]][valArray[1]] || limitObj[valArray[0]][valArray[1]] === 0) {
-      limitVal = limitObj[valArray[0]][valArray[1]];
-    }
-    if (itemMap.has(key)) {
-      if (itemMap.get(key) !== limitVal) {
-        itemArrayString += '\'' + key + '\',';
-        itemMap.set(key, limitVal);
+    [LIMIT_ITEM_SUFFIX_REMAINING, LIMIT_ITEM_SUFFIX_MAX].forEach((suffix) => {
+      let limitVal = '';
+      if (limitObj[val][suffix] || limitObj[val][suffix] === 0) {
+        limitVal = limitObj[val][suffix];
       }
-    } else {
-      itemMap.set(key, limitVal);
-    }
+      let key = val + suffix;
+      if (itemMap.has(key)) {
+        if (itemMap.get(key) !== limitVal) {
+          itemArrayString += '\'' + key + '\',';
+          itemMap.set(key, limitVal);
+        }
+      } else {
+        itemMap.set(key, limitVal);
+      }  
+    });
   });
   if (itemArrayString) {
     itemArrayString = itemArrayString.slice(0, -1);
@@ -214,7 +220,8 @@ async function getItems() {
   itemMap.set(ITEM_ARRAY_STRING, itemArrayString);
 
   for (var item in limitObj) {
-    if (!limitItemSet.has(item + '.Remaining') || !limitItemSet.has(item + '.Max')) {
+    if (!limitItemSet.has(item + '.' + LIMIT_ITEM_SUFFIX_REMAINING) ||
+        !limitItemSet.has(item + '.' + LIMIT_ITEM_SUFFIX_MAX)) {
       logging('Unknown limit item: ' + item);
     }
   }
