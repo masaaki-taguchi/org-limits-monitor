@@ -200,18 +200,20 @@ async function getItems() {
   LIMIT_ITEM_ARRAY.forEach((val) => {
     [LIMIT_ITEM_SUFFIX_REMAINING, LIMIT_ITEM_SUFFIX_MAX].forEach((suffix) => {
       let limitVal = '';
-      if (limitObj[val][suffix] || limitObj[val][suffix] === 0) {
-        limitVal = limitObj[val][suffix];
-      }
       let key = val + suffix;
-      if (itemMap.has(key)) {
-        if (itemMap.get(key) !== limitVal) {
-          itemArrayString += '\'' + key + '\',';
+      if (!limitObj[val] || !limitObj[val][suffix]) {
+        itemMap.set(key, '-');
+      } else {
+        limitVal = limitObj[val][suffix];
+        if (itemMap.has(key)) {
+          if (itemMap.get(key) !== limitVal) {
+            itemArrayString += '\'' + key + '\',';
+            itemMap.set(key, limitVal);
+          }
+        } else {
           itemMap.set(key, limitVal);
         }
-      } else {
-        itemMap.set(key, limitVal);
-      }  
+      }
     });
   });
   if (itemArrayString) {
