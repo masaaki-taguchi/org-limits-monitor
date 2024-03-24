@@ -14,6 +14,7 @@ const LIMIT_ITEM_SUFFIX_MAX = 'Max';
 const LIMIT_ITEM_ARRAY = [
   'ActiveScratchOrgs',
   'AnalyticsExternalDataSizeMB',
+  'CdpAiInferenceApiMonthlyLimit',
   'ConcurrentAsyncGetReportInstances',
   'ConcurrentEinsteinDataInsightsStoryCreation',
   'ConcurrentEinsteinDiscoveryStoryCreation',
@@ -33,6 +34,7 @@ const LIMIT_ITEM_ARRAY = [
   'DailyEinsteinDiscoveryPredictAPICalls',
   'DailyEinsteinDiscoveryPredictionsByCDC',
   'DailyEinsteinDiscoveryStoryCreation',
+  'DailyEinsteinDiscoveryOptimizationJobRuns',
   'DailyGenericStreamingApiEvents',
   'DailyScratchOrgs',
   'DailyStandardVolumePlatformEvents',
@@ -45,6 +47,8 @@ const LIMIT_ITEM_ARRAY = [
   'HourlyDashboardRefreshes',
   'HourlyDashboardResults',
   'HourlyDashboardStatuses',
+  'HourlyElevateAsyncReportRuns',
+  'HourlyElevateSyncReportRuns',
   'HourlyLongTermIdMapping',
   'HourlyManagedContentPublicRequests',
   'HourlyODataCallout',
@@ -60,6 +64,7 @@ const LIMIT_ITEM_ARRAY = [
   'Package2VersionCreatesWithoutValidation',
   'PermissionSets',
   'PrivateConnectOutboundCalloutHourlyLimitMB',
+  'PublishCallbackUsageInApex',
   'SingleEmail',
   'StreamingApiConcurrentClients'
 ];

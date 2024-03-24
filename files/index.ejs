@@ -165,7 +165,7 @@
               </tr>
 
               <tr>
-                <td rowspan="3">Platform Events</td>
+                <td rowspan="4">Platform Events</td>
                 <td id="HourlyPublishedPlatformEvents" data-bs-toggle="tooltip" title="High-volume platform event notifications published per hour">HourlyPublishedPlatformEvents</td>
                 <td id="HourlyPublishedPlatformEventsRemaining"><%- HourlyPublishedPlatformEventsRemaining %></td>
                 <td id="HourlyPublishedPlatformEventsMax"><%- HourlyPublishedPlatformEventsMax %></td>
@@ -179,6 +179,11 @@
                 <td id="DailyStandardVolumePlatformEvents" data-bs-toggle="tooltip" title="Daily standard-volume platform event notifications delivered to CometD clients">DailyStandardVolumePlatformEvents</td>
                 <td id="DailyStandardVolumePlatformEventsRemaining"><%- DailyStandardVolumePlatformEventsRemaining %></td>
                 <td id="DailyStandardVolumePlatformEventsMax"><%- DailyStandardVolumePlatformEventsMax %></td>
+              </tr>
+              <tr>
+                <td id="PublishCallbackUsageInApex" data-bs-toggle="tooltip" title="The usage of all publish callbacks in the last 30 minutes">PublishCallbackUsageInApex</td>
+                <td id="PublishCallbackUsageInApexRemaining"><%- PublishCallbackUsageInApexRemaining %></td>
+                <td id="PublishCallbackUsageInApexMax"><%- PublishCallbackUsageInApexMax %></td>
               </tr>
 
               <tr>
@@ -294,7 +299,7 @@
             </thead>
             <tbody>
               <tr>
-                <td rowspan="10">Analytics</td>
+                <td rowspan="12">Analytics</td>
                 <td id="ConcurrentAsyncGetReportInstances" data-bs-toggle="tooltip" title="Concurrent REST API requests for results of asynchronous report runs">ConcurrentAsyncGetReportInstances</td>
                 <td id="ConcurrentAsyncGetReportInstancesRemaining"><%- ConcurrentAsyncGetReportInstancesRemaining %></td>
                 <td id="ConcurrentAsyncGetReportInstancesMax"><%- ConcurrentAsyncGetReportInstancesMax %></td>
@@ -313,6 +318,16 @@
                 <td id="HourlySyncReportRuns" data-bs-toggle="tooltip" title="Hourly synchronous report runs via REST API">HourlySyncReportRuns</td>
                 <td id="HourlySyncReportRunsRemaining"><%- HourlySyncReportRunsRemaining %></td>
                 <td id="HourlySyncReportRunsMax"><%- HourlySyncReportRunsMax %></td>
+              </tr>
+              <tr>
+                <td id="HourlyElevateAsyncReportRuns" data-bs-toggle="tooltip" title="">HourlyElevateAsyncReportRuns</td>
+                <td id="HourlyElevateAsyncReportRunsRemaining"><%- HourlyElevateAsyncReportRunsRemaining %></td>
+                <td id="HourlyElevateAsyncReportRunsMax"><%- HourlyElevateAsyncReportRunsMax %></td>
+              </tr>
+              <tr>
+                <td id="HourlyElevateSyncReportRuns" data-bs-toggle="tooltip" title="">HourlyElevateSyncReportRuns</td>
+                <td id="HourlyElevateSyncReportRunsRemaining"><%- HourlyElevateSyncReportRunsRemaining %></td>
+                <td id="HourlyElevateSyncReportRunsMax"><%- HourlyElevateSyncReportRunsMax %></td>
               </tr>
               <tr>
                 <td id="HourlyDashboardRefreshes" data-bs-toggle="tooltip" title="Hourly dashboard refreshes via REST API">HourlyDashboardRefreshes</td>
@@ -378,7 +393,7 @@
 
 
               <tr>
-                <td rowspan="5">Einstein Discovery</td>
+                <td rowspan="6">Einstein Discovery</td>
                 <td id="DailyEinsteinDiscoveryPredictAPICalls" data-bs-toggle="tooltip" title="">DailyEinsteinDiscoveryPredictAPICalls</td>
                 <td id="DailyEinsteinDiscoveryPredictAPICallsRemaining"><%- DailyEinsteinDiscoveryPredictAPICallsRemaining %></td>
                 <td id="DailyEinsteinDiscoveryPredictAPICallsMax"><%- DailyEinsteinDiscoveryPredictAPICallsMax %></td>
@@ -403,9 +418,14 @@
                 <td id="ConcurrentEinsteinDiscoveryStoryCreationRemaining"><%- ConcurrentEinsteinDiscoveryStoryCreationRemaining %></td>
                 <td id="ConcurrentEinsteinDiscoveryStoryCreationMax"><%- ConcurrentEinsteinDiscoveryStoryCreationMax %></td>
               </tr>
+              <tr>
+                <td id="DailyEinsteinDiscoveryOptimizationJobRuns" data-bs-toggle="tooltip" title="">DailyEinsteinDiscoveryOptimizationJobRuns</td>
+                <td id="DailyEinsteinDiscoveryOptimizationJobRunsRemaining"><%- DailyEinsteinDiscoveryOptimizationJobRunsRemaining %></td>
+                <td id="DailyEinsteinDiscoveryOptimizationJobRunsMax"><%- DailyEinsteinDiscoveryOptimizationJobRunsMax %></td>
+              </tr>
 
               <tr>
-                <td rowspan="4">Other</td>
+                <td rowspan="5">Other</td>
                 <td id="DailyEinsteinDataInsightsStoryCreation" data-bs-toggle="tooltip" title="">DailyEinsteinDataInsightsStoryCreation</td>
                 <td id="DailyEinsteinDataInsightsStoryCreationRemaining"><%- DailyEinsteinDataInsightsStoryCreationRemaining %></td>
                 <td id="DailyEinsteinDataInsightsStoryCreationMax"><%- DailyEinsteinDataInsightsStoryCreationMax %></td>
@@ -424,6 +444,11 @@
                 <td id="PermissionSets" data-bs-toggle="tooltip" title="">PermissionSets</td>
                 <td id="PermissionSetsRemaining"><%- PermissionSetsRemaining %></td>
                 <td id="PermissionSetsMax"><%- PermissionSetsMax %></td>
+              </tr>
+              <tr>
+                <td id="CdpAiInferenceApiMonthlyLimit" data-bs-toggle="tooltip" title="">CdpAiInferenceApiMonthlyLimit</td>
+                <td id="CdpAiInferenceApiMonthlyLimitRemaining"><%- CdpAiInferenceApiMonthlyLimitRemaining %></td>
+                <td id="CdpAiInferenceApiMonthlyLimitMax"><%- CdpAiInferenceApiMonthlyLimitMax %></td>
               </tr>
             </tbody>
           </table>
